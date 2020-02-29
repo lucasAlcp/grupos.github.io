@@ -13,13 +13,13 @@ function grupo_aleatorio()
 function atualizarTela()
 {
     //Limpa a lista no html
-    document.querySelector(".lista").innerHTML = '';
+    document.querySelector("#lista").innerHTML = '';
     document.querySelector("#grupo1").innerHTML = '';
     document.querySelector("#grupo2").innerHTML = '';
     
     //Percorre a lista nomes e atualiza na tela
     nomes.forEach((nome) => {
-        document.querySelector(".lista").innerHTML += `<li>${nome}</li>`;
+        document.querySelector("#lista").innerHTML += `<li>${nome}</li>`;
     });
 
     //Atualiza o grupo 1
