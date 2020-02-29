@@ -1,0 +1,17 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    background-color: rgb(43, 100, 133);
+    
+}
+ul{
+    list-style: none;
+    align-items: center;
+}
+.botao{
+    background-color: rgb(245, 245, 245);
+    height: 35px;
+    border-radius: 5px;
+    margin: 2px;
+}
