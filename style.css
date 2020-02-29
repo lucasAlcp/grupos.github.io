@@ -6,20 +6,12 @@ body{
     
 }
 ul{
-    display: block;
-    list-style: none;
     margin-left: -40px;
+    list-style: none;
 }
 .botao{
     background-color: rgb(245, 245, 245);
     height: 35px;
     border-radius: 5px;
     margin: 2px;
-}
-.res{
-    display: inline-flex;
-    margin-left: 4px;
-}
-div{
-    padding: 15px;
 }

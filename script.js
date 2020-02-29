@@ -1,61 +1,43 @@
-var nomes = [];
-var grupos = [];
-
+var quantia=0;
+var nome= [];
+var numeros = [];
+var aux;
 function add(){
-    //adiciona um novo item ao array
-    nomes.push(prompt('Digite o nome do integrante'));
-    atualizarTela();
-}
-function grupo_aleatorio()
-{
-    return Math.floor(Math.random() * grupos.length);
-}
-function atualizarTela()
-{
-    //Limpa a lista no html
-    document.querySelector("#lista").innerHTML = '';
-    document.querySelector("#grupo1").innerHTML = '';
-    document.querySelector("#grupo2").innerHTML = '';
-    
-    //Percorre a lista nomes e atualiza na tela
-    nomes.forEach((nome) => {
-        document.querySelector("#lista").innerHTML += `<li>${nome}</li>`;
-    });
-
-    //Atualiza o grupo 1
-    grupos[0].forEach( (nome) => {
-        document.querySelector("#grupo1").innerHTML += `<li>${nome}</li>`;
-    });
-    //Atualiza o grupo 2
-    grupos[1].forEach( (nome) => {
-        document.querySelector("#grupo2").innerHTML += `<li>${nome}</li>`;
-    });
+    var ul = document.getElementById("ul").innerHTML;
+    nome[quantia] = prompt('Digite o nome do integrante');
+    ul = ul+ "<li>"+ nome[quantia] + "<\li>";
+    document.getElementById("ul").innerHTML= ul;
+    quantia = quantia +1;
 }
 function gerar(){
-
-    grupos[0] = new Array();
-    grupos[1] = new Array();
-
-    nomes.forEach((nome) => {
-        var num_gerado = grupo_aleatorio() + 1; //1 ou 2 ao invés de 0 e 1
-        
-        if(num_gerado == 1) {
-            if(grupos[0].length == nomes.length / grupos.length) {
-                grupos[1].push(nome);
-            } else {
-                grupos[0].push(nome);
-            }
-        } else {
-            if(grupos[1].length == nomes.length / grupos.length) {
-                grupos[0].push(nome);
-            } else {
-                grupos[1].push(nome);
-            }
-        }
-
-    });
-
-    atualizarTela();
+    var grupo1 = document.getElementById("grupo1").innerHTML
+    var grupo2 = document.getElementById("grupo2").innerHTML
     
+        
+    //Limpa a lista
+        numeros = [];
+        grupo1 = "";
+        document.getElementById("grupo1").innerHTML = grupo1;
+        grupo2 = "";
+        document.getElementById("grupo2").innerHTML = grupo1;
+    
+    for(var i = 0; i < quantia/2; i++ ){
+        grupo1 = grupo1 + "<li>"+nome[numero_aleatorio()]+"</li>";
+        document.getElementById("grupo1").innerHTML = grupo1;
+    }
+    for(var i = 0; i < quantia/2; i++ ){
+        grupo2 = grupo2 + "<li>"+nome[numero_aleatorio()]+"</li>";
+        document.getElementById("grupo2").innerHTML = grupo2;
+    }
 }
 
+function numero_aleatorio(){
+    while(numeros.length <=quantia){
+        aux = Math.floor(Math.random()*quantia);
+        if(numeros.indexOf(aux) == -1){
+            var aleatorio = aux;
+            numeros.push(aleatorio);
+            return aleatorio;
+        }
+    }
+}
